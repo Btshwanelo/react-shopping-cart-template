@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux/es/exports.js";
 
 function App() {
   const dispatch = useDispatch();
-  const { cartItems, isLoading } = useSelector((state) => state.cart);
+  const { cartItems, isLoading, isError, errorMessage } = useSelector((state) => state.cart);
   const { isOpen } = useSelector((state) => state.modal);
 
   useEffect(() => {
@@ -23,6 +23,14 @@ function App() {
     return (
       <div className="loading">
         <h1>Loading...</h1>
+      </div>
+    );
+  }
+
+  if (isError) {
+    return (
+      <div className="loading">
+        <h1>{errorMessage}</h1>
       </div>
     );
   }

@@ -8,6 +8,8 @@ const initialState = {
   amount: 0,
   total: 0,
   isLoading: false,
+  isError: false,
+  errorMessage: "",
 };
 
 export const getCartItems = createAsyncThunk(
@@ -56,13 +58,19 @@ const cartSlice = createSlice({
   extraReducers: {
     [getCartItems.pending]: (state) => {
       state.isLoading = true;
+      state.isError = false;
+      state.errorMessage = "";
     },
     [getCartItems.fulfilled]: (state, action) => {
       state.isLoading = false;
+      state.isError = false;
       state.cartItems = action.payload;
+      state.errorMessage = "";
     },
     [getCartItems.rejected]: (state) => {
       state.isLoading = false;
+      state.isError = true;
+      state.errorMessage = "Something went wrong";
     },
   },
 });
