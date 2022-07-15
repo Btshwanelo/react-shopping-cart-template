@@ -28,21 +28,12 @@
     "eject": "react-scripts eject",
     "test": "jest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "lint": "eslint .",
-    "lint:fix": "eslint. --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "deploy": "gh-pages -d build"
   },
   "jest": {
     "transform": {
       "^.+\\.[t|j]sx?$": "babel-jest"
     }
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -60,13 +51,9 @@
     "@babel/preset-env": "^7.18.6",
     "@babel/preset-react": "^7.18.6",
     "babel-jest": "^28.1.2",
-    "eslint": "^8.19.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.30.1",
     "gh-pages": "^4.0.0",
     "jest": "^28.1.2",
-    "prettier": "^2.7.1",
     "react-test-renderer": "^18.2.0"
   }
 }
