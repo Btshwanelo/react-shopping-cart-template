@@ -4,7 +4,7 @@ import CartContainer from "./components/CartContainer.js";
 import Navbar from "./components/Navbar.js";
 import Modal from "./components/modal.js";
 import { calculateTotals, getCartItems } from "./features/cart/cartSlice.js";
-import { useDispatch, useSelector } from "react-redux/es/exports.js";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
