@@ -1,10 +1,11 @@
 import React from "react";
 import { ChevronDown, ChevronUp } from "../icons.js";
 import { removeItem, increase, decrease } from "../features/cart/cartSlice.js";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../store.js";
 
 const CartItem = ({ id, img, title, price, amount }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <article className="cart-item">
       <img src={img} alt={title} />

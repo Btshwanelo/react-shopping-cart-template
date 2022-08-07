@@ -4,12 +4,15 @@ import CartContainer from "./components/CartContainer.js";
 import Navbar from "./components/Navbar.js";
 import Modal from "./components/modal.js";
 import { calculateTotals, getCartItems } from "./features/cart/cartSlice.js";
-import { useDispatch, useSelector } from "react-redux/es/exports.js";
+// import { useDispatch, useSelector } from "react-redux/es/exports.js";
+import { useAppDispatch, useAppSelector } from "./store.js";
 
 function App() {
-  const dispatch = useDispatch();
-  const { cartItems, isLoading, isError, errorMessage } = useSelector((state) => state.cart);
-  const { isOpen } = useSelector((state) => state.modal);
+  const dispatch = useAppDispatch();
+  const { cartItems, isLoading, isError, errorMessage } = useAppSelector(
+    (state) => state.cart
+  );
+  const { isOpen } = useAppSelector((state) => state.modal);
 
   useEffect(() => {
     dispatch(calculateTotals());

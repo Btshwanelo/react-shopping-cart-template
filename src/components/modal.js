@@ -1,10 +1,11 @@
 import React from "react";
 import { closeModal } from "../features/modal/modalSlice.js";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 import { clearCart } from "../features/cart/cartSlice.js";
+import { useAppDispatch } from "../store.js";
 
 const Modal = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   return (
     <aside className="modal-container">
       <div className="modal">
